@@ -46,7 +46,7 @@ const id = ({
   conferenceName,
   slogan,
 }: {
-  data: sideBarType;
+  data: Array<sideBarType>;
   conferenceName: string;
   slogan: string;
 }) => {
@@ -66,7 +66,7 @@ const id = ({
 
   useEffect(() => {
     setWidth(window.innerWidth);
-    setSideBarData([...data]);
+    setSideBarData(data);
     setDataListName('Organizer');
   }, []);
   console.log(sideBarData);
@@ -211,6 +211,7 @@ export const getServerSideProps = async (context: {
     }); // get the data from api
 
     sideBarData[1]!.data = data?.conference?.speakers;
+    console.log(sideBarData);
 
     return {
       props: {
