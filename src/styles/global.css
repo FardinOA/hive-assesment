@@ -1,0 +1,132 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* this will add extra font into the project  as a class name of tailwind css*/
+
+/*Segoe_UI font family*/
+@font-face {
+  font-family: "Segoe_UI_PRIMARY";
+  src: url("../../public/font/SegeoUI/Segoe_UI.woff");
+}
+
+@font-face {
+  font-family: "Segoe_UI_ITALIC";
+  src: url("../../public/font/SegeoUI/Segoe_UI_Italic.woff");
+}
+
+@font-face {
+  font-family: "Segoe_UI_BOLD";
+  src: url("../../public/font/SegeoUI/Segoe_UI_Bold.woff");
+}
+
+@font-face {
+  font-family: "Segoe_UI_ITALIC_BOLD";
+  src: url("../../public/font/SegeoUI/Segoe_UI_Bold_Italic.woff");
+}
+
+/* Inter font family */
+@font-face {
+  font-family: "Inter_Black";
+  src: url("../../public/font/Init/Inter-Black.otf");
+}
+@font-face {
+  font-family: "Inter_Black_Italic";
+  src: url("../../public/font/Init/Inter-BlackItalic.otf");
+}
+@font-face {
+  font-family: "Inter_Bold";
+  src: url("../../public/font/Init/Inter-Bold.otf");
+}
+@font-face {
+  font-family: "Inter_Bold_Italic";
+  src: url("../../public/font/Init/Inter-BoldItalic.otf");
+}
+@font-face {
+  font-family: "Inter_Extra_Bold";
+  src: url("../../public/font/Init/Inter-ExtraBold.otf");
+}
+@font-face {
+  font-family: "Inter_Extra_Bold_Italic";
+  src: url("../../public/font/Init/Inter-ExtraBoldItalic.otf");
+}
+@font-face {
+  font-family: "Inter_Extra_Light";
+  src: url("../../public/font/Init/Inter-ExtraLight.otf");
+}
+@font-face {
+  font-family: "Inter_Extra_Light_Italic";
+  src: url("../../public/font/Init/Inter-ExtraLightItalic.otf");
+}
+@font-face {
+  font-family: "Inter_Italic";
+  src: url("../../public/font/Init/Inter-Italic.otf");
+}
+@font-face {
+  font-family: "Inter_Light";
+  src: url("../../public/font/Init/Inter-Light.otf");
+}
+@font-face {
+  font-family: "Inter_Light_Italic";
+  src: url("../../public/font/Init/Inter-LightItalic.otf");
+}
+@font-face {
+  font-family: "Inter_Medium";
+  src: url("../../public/font/Init/Inter-Medium.otf");
+}
+@font-face {
+  font-family: "Inter_Inter_MediumItalic";
+  src: url("../../public/font/Init/Inter-MediumItalic.otf");
+}
+@font-face {
+  font-family: "Inter_Regular";
+  src: url("../../public/font/Init/Inter-Regular.otf");
+}
+@font-face {
+  font-family: "Inter_Inter_SemiBold";
+  src: url("../../public/font/Init/Inter-SemiBold.otf");
+}
+@font-face {
+  font-family: "Inter_Semi_Bold_Italic";
+  src: url("../../public/font/Init/Inter-SemiBoldItalic.otf");
+}
+@font-face {
+  font-family: "Inter_Thin";
+  src: url("../../public/font/Init/Inter-Thin.otf");
+}
+@font-face {
+  font-family: "Inter_Thin_Italic";
+  src: url("../../public/font/Init/Inter-ThinItalic.otf");
+}
+
+
+
+
+ 
+@layer components { 
+.heroTitle{
+ @apply capitalize text-end font-Inter_Black  not-italic  lg:leading-[110px] leading-[58px] font-[700]  
+}
+  
+}
+
+ 
+@layer utilities {
+ .ornament-69 {
+    background: linear-gradient(180deg, #FFFFFF -52.46%, rgba(255, 255, 255, 0) 42.25%);
+  }
+
+  .vector1{
+   transform: matrix(1, 0, 0, -1, 0, 0) !important
+  }
+  .vector2{
+   transform: matrix(-0.96, -0.29, -0.28, 0.96, 0, 0) !important
+  }
+  .vector3{
+   transform: matrix(-0.96, -0.29, -0.28, 0.96, 0, 0) !important
+  }
+}
+
+ 

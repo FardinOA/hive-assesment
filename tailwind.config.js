@@ -1,0 +1,67 @@
+/** @type {import('tailwindcss').Config} */
+
+module.exports = {
+    mode: "jit",
+    purge: ["./src/**/*.{js,ts,jsx,tsx}"],
+    content: ["./src/**/*.{js,ts,jsx,tsx}"],
+    darkMode: "class",
+    theme: {
+        fontFamily: {
+            Segoe_UI_Bold: ["Segoe_UI_BOLD"],
+            Segoe_UI_Primary: ["Segoe_UI_PRIMARY"],
+            Segoe_UI_Italic: ["Segoe_UI_ITALIC"],
+            Segoe_UI_Italic_Bold: ["Segoe_UI_ITALIC_BOLD"],
+            Inter_Black: [`Inter_Black`],
+            Inter_Black_Italic: [`Inter_Black_Italic`],
+            Inter_Bold: [`Inter_Bold`],
+            Inter_Bold_Italic: [`Inter_Bold_Italic`],
+            Inter_Extra_Bold: [`Inter_Extra_Bold`],
+            Inter_Extra_Bold_Italic: [`Inter_Extra_Bold_Italic`],
+            Inter_Extra_Light: [`Inter_Extra_Light`],
+            Inter_Extra_Light_Italic: [`Inter_Extra_Light_Italic`],
+            Inter_Italic: [`Inter_Italic`],
+            Inter_Light: [`Inter_Light`],
+            Inter_Light_Italic: [`Inter_Light_Italic`],
+            Inter_Medium: [`Inter_Medium`],
+            Inter_Inter_MediumItalic: [`Inter_Inter_MediumItalic`],
+            Inter_Regular: [`Inter_Regular`],
+            Inter_SemiBold: [`Inter_Inter_SemiBold`],
+            Inter_Semi_Bold_Italic: [`Inter_Semi_Bold_Italic`],
+            Inter_Thin: [`Inter_Thin`],
+            Inter_Thin_Italic: [`Inter_Thin_Italic`],
+        },
+        fontSize: {
+            xs: "0.75rem",
+            sm: "0.875rem",
+            base: "1rem",
+            lg: "1.125rem",
+            xl: "1.25rem",
+            "2xl": "1.5rem",
+            "3xl": "1.875rem",
+            "4xl": "2.25rem",
+            "5xl": "3rem",
+            "6xl": "4rem",
+        },
+        extend: {
+            colors: {
+                yellow: {
+                    DEFAULT: "#FFC93E",
+                    LIGHT: "#FBF6EA",
+                    arrowIcon: "#FFFCF6",
+                },
+                brown: "#725114",
+                blue: {
+                    LIGHT: "#F0F3FC",
+                    DEFAULT: "#111D5E",
+                    variantOne: "#111D5E",
+                    variantTwo: "#0045FF",
+                    variantThree: "#0A142F",
+                },
+                white: {
+                    DEFAULT: "#FFFFFF",
+                    primary: "#FFFFFF",
+                },
+            },
+        },
+    },
+};
