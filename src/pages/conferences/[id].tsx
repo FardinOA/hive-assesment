@@ -67,9 +67,8 @@ const id = ({
   useEffect(() => {
     setWidth(window.innerWidth);
     setSideBarData(data);
-    setDataListName('Organizer');
+    setDataListName(dataListName);
   }, []);
-  console.log(sideBarData);
 
   return (
     <Main meta={<Meta title={'React Conference'} description={''} />}>
@@ -87,9 +86,10 @@ const id = ({
           <div className="relative  w-full">
             {sideBarData?.map((ele: sideBarType, ind) => {
               return (
-                <React.Fragment key={ind}>
+                <div key={ind}>
                   {/*  */}
-                  <p
+
+                  <div
                     onClick={() => {
                       ele.text == 'Speakers' && setShowSpeakers(!showSpeakers);
                       setDataListName(ele.text);
@@ -105,8 +105,10 @@ const id = ({
                       } rotate-90 rounded-md bg-[#FFFCF6] p-4`}
                       icon={faArrowRightArrowLeft}
                     />{' '}
-                    <span className="p-4">{ele.text}</span>
-                  </p>
+                    <span className="p-4 font-Inter_Regular  text-[20px] ">
+                      {ele.text}
+                    </span>
+                  </div>
                   {dataListName == ele.text && ele.data ? (
                     <div
                       className={`  top-[2rem] rounded-md   bg-[#FBFBFB] p-4 lg:absolute lg:left-[50%]
@@ -172,7 +174,7 @@ const id = ({
                       ) : null}
                     </>
                   )}
-                </React.Fragment>
+                </div>
               );
             })}
           </div>
