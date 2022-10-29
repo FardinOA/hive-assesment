@@ -118,9 +118,9 @@ const id = ({
 
                   <div
                     onDragStart={(e: React.DragEvent<HTMLDivElement>) =>
-                      dragStart(e, ind)
+                      dragStart(ind)
                     }
-                    onDragEnter={(e) => dragEnter(e, ind)}
+                    onDragEnter={(e) => dragEnter(ind)}
                     onDragEnd={(e) => dropTheElement(e)}
                     draggable
                     onClick={() => {
