@@ -56,6 +56,32 @@ const id = ({
   const [showSpeakers, setShowSpeakers] = useState(false);
   const [dataListName, setDataListName] = useState('');
 
+  const [dragStartPosition, setDragStartPosition] = useState<number | null>(
+    null
+  );
+  const [dragEnterPosition, setDragEnterPosition] = useState<number | null>(
+    null
+  );
+
+  // grap element
+  const dragStart = (position: number) => {
+    setDragStartPosition(position);
+  };
+  // drop position
+  const dragEnter = (position: number) => {
+    setDragEnterPosition(position);
+  };
+
+  // drop element
+  const dropTheElement = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const newMenuList: sideBarType[] = [...sideBarData];
+    const copyTheDraggedElement: sideBarType = newMenuList[dragStartPosition!]!;
+    newMenuList.splice(dragStartPosition!, 1);
+    newMenuList.splice(dragEnterPosition!, 0, copyTheDraggedElement);
+    setSideBarData(newMenuList);
+  };
+
   const [width, setWidth] = useState(0); // default width, detect on server.
   const handleResize = () => setWidth(window.innerWidth);
   useEffect(() => {
@@ -69,6 +95,7 @@ const id = ({
     setSideBarData(data);
     setDataListName(dataListName);
   }, []);
+  console.log(sideBarData);
 
   return (
     <Main meta={<Meta title={'React Conference'} description={''} />}>
@@ -90,11 +117,17 @@ const id = ({
                   {/*  */}
 
                   <div
+                    onDragStart={(e: React.DragEvent<HTMLDivElement>) =>
+                      dragStart(e, ind)
+                    }
+                    onDragEnter={(e) => dragEnter(e, ind)}
+                    onDragEnd={(e) => dropTheElement(e)}
+                    draggable
                     onClick={() => {
                       ele.text == 'Speakers' && setShowSpeakers(!showSpeakers);
                       setDataListName(ele.text);
                     }}
-                    className={`${
+                    className={`drop-items ${
                       dataListName == ele.text && 'bg-[#FFC93E] text-white'
                     } my-8 flex h-[72px] cursor-pointer gap-12 rounded-md border p-2 transition-all duration-300 lg:w-[365px] lg:overflow-y-auto`}
                   >
